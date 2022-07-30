@@ -1,0 +1,9 @@
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\bin\Debug\DAO.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\bin\Debug\DAO.pdb
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\bin\Debug\DTO.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\bin\Debug\DTO.pdb
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\obj\Debug\DAO.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\DAO\obj\Debug\DAO.pdb

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quankaraokeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="customertype" Type="bit" />
+    <Property Name="rateoffree" Type="int" />
+    <Property Name="timestart" Type="datetime" />
+    <Property Name="backtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="iditems" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="iditems" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="totalprice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="invoice" Type="datetime" Nullable="false" />
+    <Property Name="idstaff" Type="int" Nullable="false" />
+    <Property Name="idorderinfor" Type="int" Nullable="false" />
+    <Property Name="idcustomer" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderinfor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idorderroom" Type="int" Nullable="false" />
+    <Property Name="idmenu" Type="int" Nullable="false" />
+    <Property Name="totalpricw" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderroom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idroom" Type="int" Nullable="false" />
+    <Property Name="timestart" Type="datetime" Nullable="false" />
+    <Property Name="timeend" Type="datetime" Nullable="false" />
+    <Property Name="totalprice" Type="money" />
+  </EntityType>
+  <EntityType Name="room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'quankaraoke.dbo.staff' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idaccount" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="phonenumber" />
+      <PropertyRef Name="timestart" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idaccount" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="phonenumber" Type="int" Nullable="false" />
+    <Property Name="timework" Type="int" />
+    <Property Name="timestart" Type="datetime" Nullable="false" />
+    <Property Name="timeend" Type="datetime" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="storeitems">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idname" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idname" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="iditems" Type="int" Nullable="false" />
+    <Property Name="type" Type="bit" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="quankaraokeModelStoreContainer">
+    <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="items" EntityType="Self.items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menu" EntityType="Self.menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderinfor" EntityType="Self.orderinfor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderroom" EntityType="Self.orderroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="storeitems" EntityType="Self.storeitems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [staff].[id] AS [id], 
+    [staff].[idaccount] AS [idaccount], 
+    [staff].[name] AS [name], 
+    [staff].[status] AS [status], 
+    [staff].[phonenumber] AS [phonenumber], 
+    [staff].[timework] AS [timework], 
+    [staff].[timestart] AS [timestart], 
+    [staff].[timeend] AS [timeend], 
+    [staff].[date] AS [date]
+    FROM [dbo].[staff] AS [staff]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

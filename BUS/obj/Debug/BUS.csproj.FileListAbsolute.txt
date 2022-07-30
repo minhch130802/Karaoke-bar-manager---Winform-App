@@ -1,0 +1,11 @@
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\BUS.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\BUS.pdb
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\DAO.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\DTO.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\DAO.pdb
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\bin\Debug\DTO.pdb
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\obj\Debug\BUS.dll
+C:\Users\MinhHoang\Desktop\karaoke\karaoke\BUS\obj\Debug\BUS.pdb

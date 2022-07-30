@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quankaraokeModelStoreContainer" CdmEntityContainer="quankaraoke">
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="quankaraokeModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="quankaraokeModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="customertype" ColumnName="customertype" />
+          <ScalarProperty Name="rateoffree" ColumnName="rateoffree" />
+          <ScalarProperty Name="timestart" ColumnName="timestart" />
+          <ScalarProperty Name="backtime" ColumnName="backtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="quankaraokeModel.item">
+        <MappingFragment StoreEntitySet="items">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="quankaraokeModel.menu">
+        <MappingFragment StoreEntitySet="menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iditems" ColumnName="iditems" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="quankaraokeModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="invoice" ColumnName="invoice" />
+          <ScalarProperty Name="idstaff" ColumnName="idstaff" />
+          <ScalarProperty Name="idorderinfor" ColumnName="idorderinfor" />
+          <ScalarProperty Name="idcustomer" ColumnName="idcustomer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderinfors">
+      <EntityTypeMapping TypeName="quankaraokeModel.orderinfor">
+        <MappingFragment StoreEntitySet="orderinfor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idorderroom" ColumnName="idorderroom" />
+          <ScalarProperty Name="idmenu" ColumnName="idmenu" />
+          <ScalarProperty Name="totalpricw" ColumnName="totalpricw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderrooms">
+      <EntityTypeMapping TypeName="quankaraokeModel.orderroom">
+        <MappingFragment StoreEntitySet="orderroom">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idroom" ColumnName="idroom" />
+          <ScalarProperty Name="timestart" ColumnName="timestart" />
+          <ScalarProperty Name="timeend" ColumnName="timeend" />
+          <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rooms">
+      <EntityTypeMapping TypeName="quankaraokeModel.room">
+        <MappingFragment StoreEntitySet="room">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storeitems">
+      <EntityTypeMapping TypeName="quankaraokeModel.storeitem">
+        <MappingFragment StoreEntitySet="storeitems">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idname" ColumnName="idname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="iditems" ColumnName="iditems" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="quankaraokeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="quankaraokeModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idaccount" ColumnName="idaccount" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="timework" ColumnName="timework" />
+          <ScalarProperty Name="timestart" ColumnName="timestart" />
+          <ScalarProperty Name="timeend" ColumnName="timeend" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

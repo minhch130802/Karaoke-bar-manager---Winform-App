@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quankaraokeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customertype" Type="Boolean" />
+    <Property Name="rateoffree" Type="Int32" />
+    <Property Name="timestart" Type="DateTime" Precision="3" />
+    <Property Name="backtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="iditems" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="iditems" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="totalprice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="invoice" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idstaff" Type="Int32" Nullable="false" />
+    <Property Name="idorderinfor" Type="Int32" Nullable="false" />
+    <Property Name="idcustomer" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderinfor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idorderroom" Type="Int32" Nullable="false" />
+    <Property Name="idmenu" Type="Int32" Nullable="false" />
+    <Property Name="totalpricw" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderroom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idroom" Type="Int32" Nullable="false" />
+    <Property Name="timestart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="timeend" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="totalprice" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="storeitem">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idname" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="iditems" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Boolean" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idaccount" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="phonenumber" />
+      <PropertyRef Name="timestart" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idaccount" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="phonenumber" Type="Int32" Nullable="false" />
+    <Property Name="timework" Type="Int32" />
+    <Property Name="timestart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="timeend" Type="DateTime" Precision="3" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="quankaraokeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accounts" EntityType="Self.account" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="items" EntityType="Self.item" />
+    <EntitySet Name="menus" EntityType="Self.menu" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+    <EntitySet Name="orderinfors" EntityType="Self.orderinfor" />
+    <EntitySet Name="orderrooms" EntityType="Self.orderroom" />
+    <EntitySet Name="rooms" EntityType="Self.room" />
+    <EntitySet Name="storeitems" EntityType="Self.storeitem" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="staffs" EntityType="Self.staff" />
+  </EntityContainer>
+</Schema>
